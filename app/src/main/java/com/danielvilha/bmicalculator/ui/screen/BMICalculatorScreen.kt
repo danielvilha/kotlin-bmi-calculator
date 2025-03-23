@@ -29,6 +29,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
@@ -218,6 +219,7 @@ private fun BMIValue(value: String, result: String) {
         Spacer(modifier = Modifier.height(8.dp))
         Text(
             text = result.toString(),
+            modifier = Modifier.testTag("bmiResultText"),
             style = MaterialTheme.typography.titleLarge
                 .copy(fontWeight = FontWeight.Bold),
             color = MaterialTheme.colorScheme.surface
