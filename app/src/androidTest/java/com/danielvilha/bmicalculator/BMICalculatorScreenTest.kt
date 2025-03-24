@@ -1,7 +1,9 @@
 package com.danielvilha.bmicalculator
 
+import androidx.compose.ui.test.assert
 import androidx.compose.ui.test.assertHasClickAction
 import androidx.compose.ui.test.assertTextEquals
+import androidx.compose.ui.test.hasText
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.onNodeWithTag
@@ -107,11 +109,13 @@ class BMICalculatorScreenTest {
         composeTestRule.onNodeWithContentDescription("New Button")
             .performClick()
 
-        composeTestRule.onNodeWithText("Type your weight (kg) - e.g: 73.50")
-            .assertTextEquals("")
+        composeTestRule
+            .onNodeWithTag("weightField")
+            .assert(hasText(""))
 
-        composeTestRule.onNodeWithText("Type your height (cm) - e.g: 178")
-            .assertTextEquals("")
+        composeTestRule
+            .onNodeWithTag("heightField")
+            .assert(hasText(""))
     }
 
     @Test

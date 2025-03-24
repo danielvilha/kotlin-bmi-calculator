@@ -40,10 +40,13 @@ class MainViewModel : ViewModel() {
     }
 
     fun calculateBMI() {
-        if (weight.isBlank() || height.isBlank()) {
+        val weightValue = weight.toFloatOrNull()
+        val heightValue = height.toFloatOrNull()
+
+        if (weightValue == null || heightValue == null) {
             showSnackBar = true
         } else {
-            val bmi = weight.toFloat() / ((height.toFloat() / 100) * (height.toFloat() / 100))
+            val bmi = weightValue / ((heightValue / 100) * (heightValue / 100))
             onValueChange(String.Companion.format(Locale.US, "%.2f", bmi))
             onResultChange(
                 when {

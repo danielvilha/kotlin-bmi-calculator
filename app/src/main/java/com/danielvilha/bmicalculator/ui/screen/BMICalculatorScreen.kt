@@ -287,6 +287,7 @@ private fun BMIOutlinedText(viewModel: MainViewModel) {
         label = { Text(text = "Type your weight (kg) - e.g: 73.50") },
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal),
         modifier = Modifier
+            .testTag("weightField")
             .fillMaxWidth()
             .padding(start = 16.dp, end = 16.dp)
             .background(MaterialTheme.colorScheme.surfaceVariant),
@@ -306,6 +307,7 @@ private fun BMIOutlinedText(viewModel: MainViewModel) {
         label = { Text("Type your height (cm) - e.g: 178") },
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
         modifier = Modifier
+            .testTag("heightField")
             .fillMaxWidth()
             .padding(start = 16.dp, end = 16.dp)
             .background(MaterialTheme.colorScheme.surfaceVariant),
